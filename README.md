@@ -1,66 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# builders-pay
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+API desenvolvida em Laravel para consulta e cálculo de valor e juros de um boleto.
 
-## About Laravel
+Versões:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PHP: ^8.1<br>
+composer: 2.3.10<br>
+Laravel Framework: ^10.0
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Instalação do projeto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Realize o clone do projeto através do link https://github.com/evertonalmeida16/builders-pay.git
 
-## Learning Laravel
+Para o desenvolvimento do projeto foi utilizado o Framework Laravel, para realizar a configuração inicial do projeto é necessário realizar a instalação de um projeto Laravel. Documentação de instalação https://laravel.com/docs/10.x/installation.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Após realizar o clone do projeto é necessário realizar a configuração e instalação do mesmo, na pasta no projeto, copie o arquivo .env.example e nomei-o para .env, dentro desse arquivo está todas as variáveis de ambiente do projeto, substitua as seguintes váriaveis de banco pelas configurações do seu banco local novo criado do zero:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+DB_CONNECTION=mysql<br>
+DB_HOST=127.0.0.1<br>
+DB_PORT=3306<br>
+DB_DATABASE=builders_pay<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=root
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Script para criação de banco de dados utilizando banco mysql8:
 
-## Laravel Sponsors
+create database `builders_pay` CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Após a criação do banco e configuração do .env precisamos realizar a instalação do projeto Laravel, no terminal abra o diretório onde o projeto está instalado, supondo que você já tenha realizado a instalação do composer e do php na sua máquina, execute o comando composer install para realizar a instalação do projeto:
 
-### Premium Partners
+![image](https://user-images.githubusercontent.com/43793955/223226997-e2efdd57-e2f6-4925-91ee-5b39e485d0a5.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Após a instalação do projeto ser realizado por completa utilizando o composer, execute no terminal o comando php artisan migrate para configurar o banco de dados:
 
-## Contributing
+![image](https://user-images.githubusercontent.com/43793955/223227535-83cc2d84-6d03-4286-8422-9b42ce3bebca.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+No seu banco de dados essas tabelas deverão ser criadas:
 
-## Code of Conduct
+![image](https://user-images.githubusercontent.com/43793955/223227704-2aa3259d-08ba-402e-aef4-8c256682011b.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Sua aplicação está pronta para ser usada.
 
-## Security Vulnerabilities
+Para rodar a aplicação sem precisar da criação de um virtual host podemos utilizar o comando php artisan serve do Laravel (Comando que libera um host na porta 8000 do endereço local para utilização do Laravel):
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![image](https://user-images.githubusercontent.com/43793955/223228954-e8051109-9941-4407-8a46-a2fa970c49b0.png)
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Utilizando as collections
+
+Para facilitar o uso e o teste da API foi disponibilizado no diretório raiz do projeto uma collection do Postman para ser usada, junto também com o arquivo de environments da API.
+
+Ao importar a collection e o environment da API no Postman a chamada que iremos utilizar para os testes está no arquivo PaymentCalc, nesse arquivo temos o body enviando o "bar_code" e o "payment_date" para a API realizar o novo cálculo atualizado do valor do boleto:
+
+![image](https://user-images.githubusercontent.com/43793955/223228433-7f76b1c7-2a02-496e-a092-a35ab9679d80.png)
+
+Obs.: Para utilizar a API da BuildersPay é necessário enviar o API_TOKEN nas requisições, token que já está sendo passado dentro do arquivo de environments. Caso tenha criado um virtual host para rodar a aplicação e não esteja utilizando o php artisan serve do laravel, mude no arquivo de environments o valor de API_URL.
+
+Ao enviar a requisição com os dados corretamente a resposta que esperamos é a seguinte (Com os dados de juros, multa e valor final do boleto atualizados):
+
+{
+    "original_amount": 260,
+    "amount": 2083.73,
+    "due_date": "2022-09-03",
+    "payment_date": "2080-03-06",
+    "interest_amount_calculated": 1818.53,
+    "fine_amount_calculated": 5.2
+}
+
+
+# Testes
+
+Para os testes foi utilizado o PHPUnit juntamente com o PestPHP, para executar nossa fila de testes pelo Laravel podemos executar o comando php artisan test
+
+![image](https://user-images.githubusercontent.com/43793955/223229620-18543c9d-e16e-4559-a080-12f0f71646aa.png)
+
+Documentação PestPHP: https://pestphp.com/
+
+Nesse projeto não foi implementado uma uma pipeline para execução dos testes, mas entendo que poderia ser utilizado como de exemplo o GitHub Actions para criação de pipeline, tais como a criação de eventos para push, executando os testes antes de uma possível subida ou merge de uma feature na branch principal do projeto.
+
+
+# Possíveis melhorias ao projeto
+
+Apesar de ser apenas um projeto base, vejo possíveis melhorias, tal como o salvamento do token de acesso da api de consulta de boletos builders, atualmente a cada requisição estamos autenticando na API novamente, uma possível melhoria seria salvar esse token junto com a data de expiração para não realizar a autenticação a cada chamada. Também vejo como uma possível melhoria uma massa maior de testes, com uma cobertura mais ampla e mais tratamentos.
+
+
+
