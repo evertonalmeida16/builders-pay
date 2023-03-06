@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "3d0193b2-8629-4dac-be54-3c07967a9a59",
+		"name": "builders-pay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12554807"
+	},
+	"item": [
+		{
+			"name": "PaymentCalc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{API_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bar_code\": \"34191790010104351004791020150008291070026000\",\n  \"payment_date\": \"2080-03-06\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/payment/calc",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"payment",
+						"calc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_API",
+			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"key": "API_TOKEN",
+			"value": "97d156584e1bdf0a7fb26eb67bc29022818cc3e3d3b29b8a8c614bf924ba5473"
+		}
+	]
+}
