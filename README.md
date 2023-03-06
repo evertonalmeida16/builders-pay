@@ -50,6 +50,9 @@ Para rodar a aplicação sem precisar da criação de um virtual host podemos ut
 
 Para facilitar o uso e o teste da API foi disponibilizado no diretório raiz do projeto uma collection do Postman para ser usada, junto também com o arquivo de environments da API.
 
+- builders-pay.postman_collection.json
+- ApiBuildersPayEnvironment.postman_environment.json
+
 Ao importar a collection e o environment da API no Postman a chamada que iremos utilizar para os testes está no arquivo PaymentCalc, nesse arquivo temos o body enviando o "bar_code" e o "payment_date" para a API realizar o novo cálculo atualizado do valor do boleto:
 
 ![image](https://user-images.githubusercontent.com/43793955/223228433-7f76b1c7-2a02-496e-a092-a35ab9679d80.png)
